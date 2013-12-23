@@ -62,7 +62,6 @@ static jlong encode(JNIEnv *env, jclass clazz, jlong n, jshortArray inputBuffer,
 	jshort *jbuf = env->GetShortArrayElements(inputBuffer, 0);
 	for (i = 0; i < con->samples; i++) {
 		// Downsampling to F/2
-		//short v = (short) ((jbuf[i * 2] + jbuf[(i * 2) + 1]) / 2);
 		short v = (short) jbuf[i * 2];
 		con->buf[i] = v;
 	}
